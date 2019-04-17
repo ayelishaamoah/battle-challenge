@@ -20,11 +20,13 @@ class Game
   end
 
   def switch_turns
-    if @current_player == @players.first
-      @current_player = @players.last
-    else
-      @current_player = @players.first
-    end
-  end
+  @current_player = opponent_of(current_player)
+end
+
+private
+
+def opponent_of(the_player)
+  @players.select { |player| player != the_player }.first
+end
 
 end
