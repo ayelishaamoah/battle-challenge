@@ -27,7 +27,7 @@ describe Game do
 
   describe '#current_player' do
     it 'starts on player one' do
-      expect(subject.current_player).to eq player_one 
+      expect(subject.current_player).to eq player_one
     end
   end
 
@@ -35,6 +35,12 @@ describe Game do
     it 'should switch the current player' do
       subject.switch_turns
       expect(subject.current_player).to eq player_two
+    end
+  end
+
+  describe '#opponent_of' do
+    it 'finds the players opponent' do
+      expect(subject.opponent_of(player_one)).to eq player_two
     end
   end
 end

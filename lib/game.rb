@@ -23,8 +23,6 @@ class Game
   @current_player = opponent_of(current_player)
 end
 
-private
-
 def opponent_of(the_player)
   @players.select { |player| player != the_player }.first
 end
