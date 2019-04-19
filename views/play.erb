@@ -1,4 +1,7 @@
 <div>
+  <%if @game.current_player.hit_points == 0 %>
+  <h2> <%=@game.current_player.name %> Loses!</h2>
+  <% else %>
   <h1> <%= @game.player_one.name %> vs <%=@game.player_two.name %> </h1>
   <h2> <%= @game.current_player.name %>'s turn </h2>
   <h3> <%= @game.player_one.name%>: <%=@game.player_one.hit_points%> XP</h3>
@@ -6,4 +9,5 @@
   <form action="/attack">
     <input type="submit" value="Attack">
   </form>
+  <% end %>
 </div
