@@ -7,6 +7,14 @@ class Game
     @current_player = player_one
   end
 
+  def self.create(player_one, player_two)
+    @game = Game.new(player_one, player_two)
+  end
+
+  def self.instance
+    @game
+  end
+
   def player_one
     @player_one = @players.first
   end
